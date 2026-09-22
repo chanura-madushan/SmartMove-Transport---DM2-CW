@@ -26,55 +26,11 @@ Additionally, it integrates **MongoDB** for unstructured multimedia storage, pas
 
 ---
 
-## 📐 System Architecture Diagram
+## 📐 System Architecture
 
-`
-                             ┌──────────────────────────────────┐
-                             │     Application / Web UI         │
-                             │          (Member 4)              │
-                             └────────────────┬─────────────────┘
-                                              │
-                             ┌────────────────┴─────────────────┐
-                             │       Backend API Service        │
-                             └────────┬─────────────────┬───────┘
-                                      │                 │
-                     ┌────────────────┴┐               ┌┴────────────────┐
-                     │ Oracle Database │               │     MongoDB     │
-                     │   (Member 1)    │               │   (Member 3)    │
-                     └────────┬────────┘               └─────────────────┘
-                              │
-                     ┌────────┴────────┐
-                     │ PL/SQL Programs │
-                     │   (Member 2)    │
-                     └─────────────────┘
-
-
-coursework/
-├── oracle/          # Member 1: Relational Schema, DDL, DML, and Relational Queries
-│   ├── create_tables.sql
-│   ├── insert_data.sql
-│   ├── queries.sql
-│   └── views.sql
-│
-├── plsql/           # Member 2: Procedures, Functions, Triggers, Cursors, and Reports
-│   ├── procedures.sql
-│   ├── functions.sql
-│   ├── triggers.sql
-│   ├── cursors.sql
-│   └── exceptions.sql
-│
-├── mongodb/         # Member 3: Collections, JSON documents, CRUD scripts, Aggregations
-│   ├── create_collections.js
-│   ├── insert_data.js
-│   ├── queries.js
-│   ├── updates.js
-│   └── aggregation.js
-│
-├── application/     # Member 4: Application UI, components, pages, and mock APIs
-│   ├── src/
-│   │   ├── pages/
-│   │   ├── components/
-│   │   └── assets/
-│   └── README.md
-│
-└── documentation/   # All Members: Screenshots, ERD, test evidence, and final report
+```mermaid
+graph TD
+    UI[Application / Web UI<br>Member 4] --> API[Backend API Service]
+    API --> ORACLE[(Oracle Database<br>Member 1)]
+    API --> MONGO[(MongoDB<br>Member 3)]
+    ORACLE --> PLSQL[PL/SQL Programs<br>Member 2]
