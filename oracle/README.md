@@ -1,1 +1,1 @@
-SQL Query for tabel and dummy data 
+SQL Query for tables and dummy data 
