@@ -1,0 +1,11 @@
+const dbs = db.getSiblingDB("smartmove_transport");
+if (!dbs.getCollectionNames().includes("vehicleDocuments")) dbs.createCollection("vehicleDocuments");
+if (!dbs.getCollectionNames().includes("reviewsFeedback")) dbs.createCollection("reviewsFeedback");
+if (!dbs.getCollectionNames().includes("announcements")) dbs.createCollection("announcements");
+if (!dbs.getCollectionNames().includes("tripMedia")) dbs.createCollection("tripMedia");
+dbs.vehicleDocuments.createIndex({ vehicleId: 1 }, { unique: true });
+dbs.reviewsFeedback.createIndex({ routeId: 1, createdAt: -1 });
+dbs.reviewsFeedback.createIndex({ comment: "text", keywords: "text" });
+dbs.announcements.createIndex({ active: 1, publishedAt: -1 });
+dbs.tripMedia.createIndex({ tripId: 1, uploadedAt: -1 });
+print("MongoDB collections and indexes created.");
