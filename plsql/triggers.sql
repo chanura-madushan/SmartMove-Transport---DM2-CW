@@ -1,31 +1,42 @@
-//Trigger 1: Prevent booking beyond vehicle capacity
+-- Trigger 1: Prevent booking beyond vehicle capacity
+
 CREATE OR REPLACE TRIGGER trg_prevent_overbooking
-BEFORE INSERT ON BOOKING
-FOR EACH ROW
-DECLARE
-    v_capacity NUMBER;
-    v_booked   NUMBER;
-BEGIN
-    SELECT v.Capacity
-    INTO v_capacity
-    FROM VEHICLE v
-    JOIN TRIP t ON v.VehicleID = t.VehicleID
-    WHERE t.TripID = :NEW.TripID;
+FOR INSERT ON BOOKING
+COMPOUND TRIGGER
 
-    SELECT COUNT(*)
-    INTO v_booked
-    FROM BOOKING
-    WHERE TripID = :NEW.TripID
-      AND BookingStatus = 'Confirmed';
+    AFTER STATEMENT IS
+    BEGIN
+        FOR r IN (
+            SELECT DISTINCT TripID
+            FROM BOOKING
+            WHERE BookingStatus = 'Confirmed'
+        )
+        LOOP
+            DECLARE
+                v_capacity NUMBER;
+                v_booked   NUMBER;
+            BEGIN
+                SELECT v.Capacity
+                INTO v_capacity
+                FROM VEHICLE v
+                JOIN TRIP t
+                    ON v.VehicleID = t.VehicleID
+                WHERE t.TripID = r.TripID;
 
-    IF :NEW.BookingStatus = 'Confirmed'
-       AND v_booked >= v_capacity THEN
-        RAISE_APPLICATION_ERROR(-20013,'Booking cannot be created. Vehicle capacity is full');
-    END IF;
-EXCEPTION
-    WHEN NO_DATA_FOUND THEN
-        RAISE_APPLICATION_ERROR( -20014,'Trip does not exist' );
-END;
+                SELECT COUNT(*)
+                INTO v_booked
+                FROM BOOKING
+                WHERE TripID = r.TripID
+                  AND BookingStatus = 'Confirmed';
+
+                IF v_booked > v_capacity THEN
+                    RAISE_APPLICATION_ERROR(-20013,'Booking cannot be created. Vehicle capacity is full');
+                END IF;
+            END;
+        END LOOP;
+    END AFTER STATEMENT;
+
+END trg_prevent_overbooking;
 /
 
 
