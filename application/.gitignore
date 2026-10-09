@@ -1,0 +1,9 @@
+# Local secrets and local development files
+backend/.env
+backend/.env.*.local
+!.env.example
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
