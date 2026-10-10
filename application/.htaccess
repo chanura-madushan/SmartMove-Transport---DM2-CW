@@ -1,0 +1,6 @@
+AddDefaultCharset UTF-8
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/svg+xml "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+</IfModule>
