@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartMove Transport Solutions</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d4ed8'/%3E%3Cpath d='M8 21l5-10 4 7 6-9' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+<symbol id="i-vehicle" viewBox="0 0 24 24"><rect x="1" y="4" width="15" height="12" rx="1"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+<symbol id="i-route" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+<symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 1 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M13 5v14" stroke-dasharray="2 2"/></symbol>
+<symbol id="i-card" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+<symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></symbol>
+<symbol id="i-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+</defs></svg>
+<aside id="sidebar">
+  <div class="brand"><span class="logo"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#2563eb"/><path d="M8 21l5-10 4 7 6-9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>SmartMove</b><small>Transport Solutions</small></div></div>
+  <nav id="nav">
+    <a href="#dashboard"><svg class="ic"><use href="#i-grid"/></svg>Dashboard</a>
+    <h6>Operations</h6>
+    <a href="#vehicles"><svg class="ic"><use href="#i-vehicle"/></svg>Vehicles</a>
+    <a href="#drivers"><svg class="ic"><use href="#i-user"/></svg>Drivers</a>
+    <a href="#routes"><svg class="ic"><use href="#i-route"/></svg>Routes</a>
+    <a href="#passengers"><svg class="ic"><use href="#i-users"/></svg>Passengers</a>
+    <a href="#trips"><svg class="ic"><use href="#i-calendar"/></svg>Trips</a>
+    <h6>Sales</h6>
+    <a href="#bookings"><svg class="ic"><use href="#i-ticket"/></svg>Bookings</a>
+    <a href="#payments"><svg class="ic"><use href="#i-card"/></svg>Payments</a>
+    <a href="#feedback"><svg class="ic"><use href="#i-chat"/></svg>Feedback</a>
+    <h6>Fleet</h6>
+    <a href="#maintenance"><svg class="ic"><use href="#i-tool"/></svg>Maintenance</a>
+    <h6>Insights</h6>
+    <a href="#reports"><svg class="ic"><use href="#i-chart"/></svg>Reports</a>
+    <a href="#reviews"><svg class="ic"><use href="#i-star"/></svg>Reviews &amp; ratings</a>
+    <h6>Content</h6>
+    <a href="#documents"><svg class="ic"><use href="#i-folder"/></svg>Documents &amp; media</a>
+    <a href="#announcements"><svg class="ic"><use href="#i-bell"/></svg>Announcements</a>
+  </nav>
+  <div class="side-foot">SmartMove Transport Solutions</div>
+</aside>
+<div id="scrim"></div>
+<div id="main">
+  <header>
+    <button id="menuBtn" aria-label="Open menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+    <div class="titles"><h1 id="pageTitle">Dashboard</h1><p id="pageSub"></p></div>
+    <div class="status">
+      <span class="pill" id="stOracle" data-n="Oracle" title="Main database"><i></i><span>Oracle</span></span>
+      <span class="pill" id="stMongo" data-n="MongoDB" title="Reviews, documents and announcements"><i></i><span>MongoDB</span></span>
+    </div>
+  </header>
+  <section id="view"></section>
+</div>
+<div id="toasts"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "smartmove-frontend",
+  "version": "1.0.0",
+  "description": "Standalone web frontend + API gateway for SmartMove Transport (Oracle + PL/SQL + MongoDB)",
+  "main": "server/index.js",
+  "scripts": { "start": "node server/index.js" },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "oracledb": "^6.6.0"
+  }
+}
