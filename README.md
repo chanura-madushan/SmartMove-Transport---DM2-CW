@@ -311,18 +311,7 @@ Record test cases, expected results, actual results, and screenshots in the cour
 - [MongoDB implementation](mongodb/README.md)
 - [Coursework documentation and evidence](documentation/README.md)
 
-## Team Responsibilities
 
-The project is organised around the group's main implementation areas:
-
-| Member | Main responsibility |
-|---|---|
-| Member 1 | Oracle relational database |
-| Member 2 | PL/SQL programming and reports |
-| Member 3 | MongoDB |
-| Member 4 | Web application and integration |
-
-Confirm the final contribution record with the group before submission.
 
 ## Project Status
 
